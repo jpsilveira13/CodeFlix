@@ -31,7 +31,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => CodeFlix\User::class,
+        'model' => \CodeFlix\Models\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'webhook' => [

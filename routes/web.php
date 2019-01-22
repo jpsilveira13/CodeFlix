@@ -15,3 +15,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group([
+    'prefix' => 'admin',
+    'as' => 'admin.',
+
+    'namespace' => 'Admin\\'
+    ],function (){
+
+    Route::name('login')->get('login','Auth\LoginController@showLoginForm');
+    Route::post('login','Auth\LoginController@login');
+
+    Route::group(['middleware'=> 'can:admin'],function (){
+        Route::name('logout')->post('logout','Auth\LoginController@logout');
+        Route::get('dashboard',function (){
+             return "Area Administrativa funfando";
+        });
+    });
+
+
+
+});
