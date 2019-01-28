@@ -15,11 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+// Password Reset Routes
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')
+    ->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')
+    ->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')
+    ->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')
+    ->name('password.update');
 
 Route::group([
     'prefix' => 'admin',
@@ -34,10 +42,18 @@ Route::group([
     Route::group(['middleware'=> 'can:admin'],function (){
         Route::name('logout')->post('logout','Auth\LoginController@logout');
         Route::get('dashboard',function (){
-             return "Area Administrativa funfando";
+             return view('admin.dashboard');
         });
     });
 
 
 
 });
+
+// Authentication Routes...
+$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+$this->post('login', 'Auth\LoginController@login');
+$this->post('logout', 'Auth\LoginController@logout')->name('logout');
+// Register routes
+$this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+$this->post('register', 'Auth\RegisterController@register');
