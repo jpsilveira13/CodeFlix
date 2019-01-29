@@ -2,12 +2,13 @@
 
 namespace CodeFlix\Models;
 
+use Bootstrapper\Interfaces\TableInterface;
 use CodeFlix\Notifications\DefaultResetPasswordNotification;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements TableInterface
 {
     use Notifiable;
     const ROLE_ADMIN  = 1;
@@ -39,5 +40,35 @@ class User extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new DefaultResetPasswordNotification($token));
+    }
+
+    /**
+     * A list of headers to be used when a table is displayed
+     *
+     * @return array
+     */
+    public function getTableHeaders()
+    {
+        return  ['#','Nome','Email'];
+    }
+
+    /**
+     * Get the value for a given header. Note that this will be the value
+     * passed to any callback functions that are being used.
+     *
+     * @param string $header
+     * @return mixed
+     */
+    public function getValueForHeader($header)
+    {
+        switch ($header){
+            case '#':
+                return $this->id;
+            case "Nome":
+                return $this->name;
+            case "Email":
+                return $this->email;
+
+        }
     }
 }
