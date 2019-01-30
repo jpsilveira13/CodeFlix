@@ -48,7 +48,8 @@ class UsersController extends Controller
         /** @var Form $form */
         $form = FormBuilder::create(UserForm::class);
         if(!$form->isValid()){
-            //redirecionar pra pagina de criação de usuario
+
+            return redirect()->back()->withErrors($form->getErrors())->withInput();
         }
         $data = $form->getFieldValues();
         $data['role'] = User::ROLE_ADMIN;
