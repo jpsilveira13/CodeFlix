@@ -17,7 +17,7 @@
 - Criando Controller para administrar usuários. Concluído
 - Listando usuários. Concluído
 - Formulação de criação de usuários. Concluído
-- Laravel Mix.
+- Laravel Mix. Concluído
 - Laravel Mix - Reloading.
 - Criando usuários.
 - Flash Message.

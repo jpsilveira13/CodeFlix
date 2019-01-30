@@ -8,7 +8,7 @@
     <div class="container">
 
         <div class="row justify-content-center">
-            <h3>Novo usuário</h3>
+            <h3>Novo usuário </h3>
             @php $icon = '<i class="fa fa-floppy-o" aria-hidden="true"></i>' @endphp
           {!!
               form($form->add('Salve','submit',[
