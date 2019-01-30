@@ -16,7 +16,7 @@
 - Traduzindo emails e notifications. Concluído
 - Criando Controller para administrar usuários. Concluído
 - Listando usuários. Concluído
-- Formulação de criação de usuários.
+- Formulação de criação de usuários. Concluído
 - Laravel Mix.
 - Laravel Mix - Reloading.
 - Criando usuários.
