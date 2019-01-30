@@ -7,6 +7,7 @@ use CodeFlix\Models\User;
 use Illuminate\Http\Request;
 use CodeFlix\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\Facades\FormBuilder;
+use Kris\LaravelFormBuilder\Form;
 
 class UsersController extends Controller
 {
@@ -42,9 +43,19 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        /** @var Form $form */
+        $form = FormBuilder::create(UserForm::class);
+        if(!$form->isValid()){
+            //redirecionar pra pagina de criação de usuario
+        }
+        $data = $form->getFieldValues();
+        $data['role'] = User::ROLE_ADMIN;
+        $data['password'] = User::generatePassword();
+        User::create($data);
+        return redirect()->route('admin.users.index');
+
     }
 
     /**

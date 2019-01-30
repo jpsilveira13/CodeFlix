@@ -18,7 +18,7 @@
 - Listando usuários. Concluído
 - Formulação de criação de usuários. Concluído
 - Laravel Mix. Concluído
-- Laravel Mix - Reloading.
+- Laravel Mix - Reloading. Concluído
 - Criando usuários.
 - Flash Message.
 - Validação com formulários.
