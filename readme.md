@@ -25,7 +25,14 @@
 - Formulário de edição de usuário. Concluído
 - Alterando usuários. Concluído
 - Excluindo usuários. Concluído
-- Criando navbar com boostrapper.
+- Criando navbar com boostrapper. Concluído
+- Integração com l5-repository
+- brincando com l5-repository
+- Usando repositório para usuários
+- Verificar conta de usuário
+- Terminando a verificação da conta do usuário
+- Exercícios
+
 - Database agnostic [schema migrations](https://laravel.com/docs/migrations).
 
 
