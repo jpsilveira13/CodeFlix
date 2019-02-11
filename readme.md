@@ -21,10 +21,10 @@
 - Laravel Mix - Reloading. Concluído
 - Criando usuários. Concluído
 - Flash Message. Concluído
-- Validação com formulários.
-- Formulário de edição de usuário.
-- Alterando usuários.
-- Excluindo usuários.
+- Validação com formulários. Concluído
+- Formulário de edição de usuário. Concluído
+- Alterando usuários. Concluído
+- Excluindo usuários. Concluído
 - Criando navbar com boostrapper.
 - Database agnostic [schema migrations](https://laravel.com/docs/migrations).
 

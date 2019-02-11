@@ -69,6 +69,8 @@
                 </div>
             </div>
         </nav>
+        <br />
+        <br />
         @if(Session::has('message'))
             <div class="container">
                 {!! \Bootstrapper\Facades\Alert::success(Session::get('message'))->close() !!}
