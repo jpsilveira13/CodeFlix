@@ -26,9 +26,9 @@
 - Alterando usuários. Concluído
 - Excluindo usuários. Concluído
 - Criando navbar com boostrapper. Concluído
-- Integração com l5-repository
-- brincando com l5-repository
-- Usando repositório para usuários
+- Integração com l5-repository. Concluído
+- brincando com l5-repository. Concluído
+- Usando repositório para usuários. Concluído
 - Verificar conta de usuário
 - Terminando a verificação da conta do usuário
 - Exercícios
